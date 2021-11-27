@@ -1,0 +1,84 @@
+body {
+  background: #ebd2b4;
+  color: #0d1b1e;
+}
+
+.container {
+  margin: 0 18rem;
+  text-align: center;
+}
+
+header {
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+section.players {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+}
+
+.players .left,
+.players .right {
+  border: 2px solid black;
+  padding: 0 2rem;
+  background: #fffbef;
+  border-radius: 1rem;
+  margin: 0 1rem;
+}
+
+.players p {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.middle {
+  font-size: 2rem;
+  margin: 0 1rem;
+}
+
+.mainboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.row {
+  display: flex;
+}
+
+.square {
+  width: 3.5rem;
+  height: 3.5rem;
+  background: #bfaa95;
+  padding: 4rem;
+  display: block;
+  margin: 0.25rem 0.25rem 0 0;
+}
+
+.x::after {
+  content: "X";
+  font-size: 3rem;
+}
+.o::after {
+  content: "O";
+  font-size: 3rem;
+}
+
+button.restart {
+  padding: 0.5rem 2rem;
+  color: #fffbef;
+  border: 3px solid #fffbef;
+  background: #dbc4a2;
+  font-size: 1.75rem;
+  font-weight: bold;
+  border-radius: 0.75rem;
+}
+
+.square:hover,
+button.restart:hover {
+  background: #988b82;
+}
