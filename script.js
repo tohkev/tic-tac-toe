@@ -40,8 +40,8 @@ const gameBoard = (() => {
 })();
 
 const game = (() => {
-  const playerOne = playerFactory("Kevin", "o");
-  const playerTwo = playerFactory("Ann", "x");
+  const playerOne = playerFactory("Kevin", "x");
+  const playerTwo = playerFactory("Ann", "o");
 
   let activePlayer = playerOne;
   let winnerDecided = false;
@@ -58,8 +58,13 @@ const game = (() => {
   ];
 
   let statusBlock = document.querySelector(".status");
-  let playerOneBlock = document.querySelector(".name1");
-  let playerTwoBlock = document.querySelector(".name2");
+  let player1Block = document.querySelector(".name1");
+  let player2Block = document.querySelector(".name2");
+  let endOverlay = document.querySelector(".overlay");
+  let endMessage = document.querySelector(".message");
+
+  player1Block.textContent = playerOne.name;
+  player2Block.textContent = playerTwo.name;
 
   function checkWinner() {
     winConditions.forEach((condition) => {
@@ -69,7 +74,9 @@ const game = (() => {
         gameBoard.main[condition[2]] === this.activePlayer.mark
       ) {
         this.winnerDecided = true;
-        statusBlock.textContent = `${this.activePlayer.name} is the winner!`;
+        statusBlock.textContent = ``;
+        endMessage.textContent = `${this.activePlayer.name} is the winner!`;
+        endOverlay.style.display = "block";
       }
     });
   }
@@ -80,10 +87,13 @@ const game = (() => {
     } else {
       this.activePlayer = playerOne;
     }
+    statusBlock.textContent = `It's ${this.activePlayer.name}'s turn!`;
   }
 
   function declareTie() {
-    statusBlock.textContent = "It's a draw!";
+    statusBlock.textContent = "";
+    endMessage.textContent = "It's a draw!";
+    endOverlay.style.display = "block";
   }
 
   return {
@@ -93,5 +103,7 @@ const game = (() => {
     checkWinner,
     winnerDecided,
     declareTie,
+    playerOne,
+    playerTwo,
   };
 })();

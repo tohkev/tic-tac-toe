@@ -4,7 +4,7 @@ body {
 }
 
 .container {
-  margin: 0 18rem;
+  margin: 0 15rem;
   text-align: center;
 }
 
@@ -14,10 +14,17 @@ header {
   justify-content: center;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
 section.players {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 .players .left,
@@ -26,17 +33,16 @@ section.players {
   padding: 0 2rem;
   background: #fffbef;
   border-radius: 1rem;
-  margin: 0 1rem;
 }
 
 .players p {
   font-size: 1.5rem;
-  margin: 0.5rem 0;
 }
 
 .middle {
   font-size: 2rem;
   margin: 0 1rem;
+  width: 30rem;
 }
 
 .mainboard {
@@ -44,6 +50,8 @@ section.players {
   flex-direction: column;
   align-items: center;
   margin-bottom: 1rem;
+  position: absolute;
+  top: 16rem;
 }
 
 .row {
@@ -76,9 +84,25 @@ button.restart {
   font-size: 1.75rem;
   font-weight: bold;
   border-radius: 0.75rem;
+  margin-top: 3rem;
 }
 
 .square:hover,
 button.restart:hover {
   background: #988b82;
+}
+
+.overlay {
+  padding: 8rem 11.5rem 15rem;
+  width: 40%;
+  height: 16rem;
+  position: relative;
+  z-index: 9999;
+  margin-bottom: 1.5rem;
+  background: rgba(235, 210, 180, 0.8);
+  display: none;
+}
+
+.overlay p {
+  font-size: 3rem;
 }
