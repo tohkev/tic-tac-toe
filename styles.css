@@ -33,6 +33,7 @@ section.players {
   padding: 0 2rem;
   background: #fffbef;
   border-radius: 1rem;
+  display: none;
 }
 
 .players p {
@@ -85,24 +86,93 @@ button.restart {
   font-weight: bold;
   border-radius: 0.75rem;
   margin-top: 3rem;
+  display: none;
 }
 
 .square:hover,
-button.restart:hover {
+button.restart:hover,
+button.submit-choices:hover {
   background: #988b82;
 }
 
 .overlay {
-  padding: 8rem 11.5rem 15rem;
+  padding: 8rem 11.5rem 13rem;
   width: 40%;
   height: 16rem;
-  position: relative;
-  z-index: 9999;
+  position: absolute;
+  z-index: 10;
   margin-bottom: 1.5rem;
   background: rgba(235, 210, 180, 0.8);
-  display: none;
+  top: 15rem;
+  /* display: none; */
 }
 
 .overlay p {
   font-size: 3rem;
+}
+
+/* MONSTER MENU */
+
+.monster-choice-overlay {
+  z-index: 100;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #fffbef;
+  border-radius: 1rem;
+  margin-top: 3rem;
+}
+
+.monster-container {
+  display: flex;
+}
+
+.monster-choice-overlay .player1-choice {
+  padding-right: 4rem;
+  border-right: 2px solid black;
+}
+
+.monster-choice-overlay .player2-choice {
+  padding-left: 4rem;
+}
+
+.image-block {
+  display: flex;
+  flex-direction: column;
+}
+
+figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+figure img {
+  width: 12rem;
+  height: 12rem;
+}
+
+figcaption {
+  font-size: 1.25rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+figure:hover,
+.selected {
+  background: #e9e6d7;
+  border-radius: 20rem;
+}
+
+button.submit-choices {
+  padding: 0.5rem 2rem;
+  color: #fffbef;
+  border: 3px solid #fffbef;
+  background: #dbc4a2;
+  font-size: 1.75rem;
+  font-weight: bold;
+  border-radius: 0.75rem;
+  margin-top: 3rem;
+  z-index: 100;
 }
