@@ -14,6 +14,10 @@ header {
   justify-content: center;
 }
 
+h1 {
+  margin-bottom: 0;
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -24,7 +28,7 @@ main {
 section.players {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 
 .players .left,
@@ -121,11 +125,12 @@ button.submit-choices:hover {
   justify-content: space-between;
   background: #fffbef;
   border-radius: 1rem;
-  margin-top: 3rem;
+  margin: 0.5rem 0 1.5rem;
 }
 
 .monster-container {
   display: flex;
+  border-bottom: 2px solid black;
 }
 
 .monster-choice-overlay .player1-choice {
@@ -137,20 +142,37 @@ button.submit-choices:hover {
   padding-left: 4rem;
 }
 
-.image-block {
+.choice-heading {
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: 2px black solid;
+}
+
+.choice-heading .half {
+  width: 50%;
+}
+
+form input[type="radio"] {
+  opacity: 0;
+}
+
+/* .image-block {
   display: flex;
   flex-direction: column;
-}
+} */
 
 figure {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0.5rem;
+  margin: 1.5rem;
 }
 
 figure img {
   width: 12rem;
   height: 12rem;
+  padding: 1rem;
 }
 
 figcaption {
@@ -159,10 +181,9 @@ figcaption {
   font-weight: bold;
 }
 
-figure:hover,
-.selected {
+figure:hover {
   background: #e9e6d7;
-  border-radius: 20rem;
+  border-radius: 1rem;
 }
 
 button.submit-choices {
@@ -173,6 +194,12 @@ button.submit-choices {
   font-size: 1.75rem;
   font-weight: bold;
   border-radius: 0.75rem;
-  margin-top: 3rem;
+  margin: 1rem 0;
   z-index: 100;
+}
+
+.row input[type="radio"]:checked + label figure {
+  border: 2px solid black;
+  border-radius: 1rem;
+  background: #e9e6d7;
 }

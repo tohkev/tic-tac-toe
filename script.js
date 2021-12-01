@@ -36,13 +36,25 @@ const gameBoard = (() => {
     window.location.reload(true);
   });
 
-  return { main };
+  return { main, restartBtn };
 })();
 
 const game = (() => {
-  const playerOne = playerFactory("Kevin", "x");
-  const playerTwo = playerFactory("Ann", "o");
+  //monster selection and player generation
 
+  let submitBtn = document.querySelector(".submit-choices");
+  let monsterMenu = document.querySelector(".monster-choice-overlay");
+
+  submitBtn.addEventListener("click", (e) => {
+    const playerOne = playerFactory("Kevin", "x");
+    const playerTwo = playerFactory("Ann", "o");
+
+    monsterMenu.style.display = "none";
+    gameBoard.restartBtn.style.display = "block";
+    e.target.style.display = "none";
+  });
+
+  //game logistics
   let activePlayer = playerOne;
   let winnerDecided = false;
   let remainingMoves = 9;
@@ -57,6 +69,7 @@ const game = (() => {
     [2, 4, 6],
   ];
 
+  //display elements
   let statusBlock = document.querySelector(".status");
   let player1Block = document.querySelector(".name1");
   let player2Block = document.querySelector(".name2");
@@ -66,6 +79,7 @@ const game = (() => {
   player1Block.textContent = playerOne.name;
   player2Block.textContent = playerTwo.name;
 
+  //check if there is a winner
   function checkWinner() {
     winConditions.forEach((condition) => {
       if (
@@ -81,6 +95,7 @@ const game = (() => {
     });
   }
 
+  //moves onto the next player
   function nextPlayer() {
     if (this.activePlayer === playerOne) {
       this.activePlayer = playerTwo;
@@ -90,6 +105,7 @@ const game = (() => {
     statusBlock.textContent = `It's ${this.activePlayer.name}'s turn!`;
   }
 
+  //this ends the game when there are no more moves
   function declareTie() {
     statusBlock.textContent = "";
     endMessage.textContent = "It's a draw!";
