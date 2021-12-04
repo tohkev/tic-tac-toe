@@ -29,19 +29,38 @@ section.players {
   display: flex;
   justify-content: space-around;
   margin-bottom: 0.25rem;
+  margin-top: 1rem;
 }
 
 .players .left,
 .players .right {
   border: 2px solid black;
-  padding: 0 2rem;
+  padding: 0 1rem;
   background: #fffbef;
   border-radius: 1rem;
-  display: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 30%;
+  /* display: none; */
+}
+
+.players img {
+  width: 5rem;
+}
+
+.players .right img {
+  margin-top: 0.5rem;
 }
 
 .players p {
   font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.players h2 {
+  margin: 0.5rem 0;
 }
 
 .middle {
@@ -54,9 +73,9 @@ section.players {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
   position: absolute;
-  top: 16rem;
+  top: 19rem;
 }
 
 .row {
@@ -72,13 +91,17 @@ section.players {
   margin: 0.25rem 0.25rem 0 0;
 }
 
-.x::after {
-  content: "X";
-  font-size: 3rem;
+.grim {
+  content: url('images/reaper.png');
+  width: 7rem;
+  height: 7rem;
+  padding: 2.25rem;
 }
-.o::after {
-  content: "O";
-  font-size: 3rem;
+.rex {
+  content: url('images/dinosaur.png');
+  width: 7rem;
+  height: 7rem;
+  padding: 2.25rem;
 }
 
 button.restart {
@@ -89,33 +112,33 @@ button.restart {
   font-size: 1.75rem;
   font-weight: bold;
   border-radius: 0.75rem;
-  margin-top: 3rem;
-  display: none;
+  z-index: 1000000;
+  /* display: none; */
 }
 
-.square:hover,
+.free:hover,
 button.restart:hover,
 button.submit-choices:hover {
   background: #988b82;
 }
 
 .overlay {
-  padding: 8rem 11.5rem 13rem;
+  padding: 7rem 11.5rem 13rem;
   width: 40%;
-  height: 16rem;
+  height: 20rem;
   position: absolute;
   z-index: 10;
-  margin-bottom: 1.5rem;
+  margin-top: 2.25rem;
   background: rgba(235, 210, 180, 0.8);
-  top: 15rem;
-  /* display: none; */
+  top: 17rem;
+  display: none;
 }
 
 .overlay p {
   font-size: 3rem;
 }
 
-/* MONSTER MENU */
+/* MONSTER MENU STYLES (Will be implemented in the future) */
 
 .monster-choice-overlay {
   z-index: 100;
@@ -126,6 +149,7 @@ button.submit-choices:hover {
   background: #fffbef;
   border-radius: 1rem;
   margin: 0.5rem 0 1.5rem;
+  display: none;
 }
 
 .monster-container {
@@ -155,11 +179,6 @@ button.submit-choices:hover {
 form input[type="radio"] {
   opacity: 0;
 }
-
-/* .image-block {
-  display: flex;
-  flex-direction: column;
-} */
 
 figure {
   display: flex;

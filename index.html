@@ -16,14 +16,17 @@
         <section class="players">
           <div class="left name">
             <h2>Player One:</h2>
-            <p><span class="name1">Name</span> X</p>
+            <img src="images/reaper.png" alt="Grim">
+            <p><span class="name1">Name</span></p>
           </div>
           <div class="middle">
-            <h3 class="status">Choose your monster!</h3>
+            <h3 class="status">Player 1 Starts!</h3>
+            <button class="restart">Restart</button>
           </div>
           <div class="right name">
             <h2>Player Two:</h2>
-            <p><span class="name2">Name</span> O</p>
+            <img src="images/dinosaur.png" alt="Rex">
+            <p><span class="name2">Name</span></p>
           </div>
         </section>
         <section class="mainboard">
@@ -42,15 +45,14 @@
             <span class="square free"></span>
             <span class="square free"></span>
           </div>
-          <button class="restart">Restart</button>
         </section>
         <section class="overlay">
           <p class="message"></p>
         </section>
         <section class="monster-choice-overlay">
           <div class="choice-heading">
-            <div class="half"><h3>Player 1</h3></div>
-            <div class="half"><h3>Player 2</h3></div>
+            <div class="half"><h3>Player 1 Choice:</h3></div>
+            <div class="half"><h3>Player 2 Choice:</h3></div>
           </div>
           <form>
             <div class="monster-container">
@@ -60,7 +62,7 @@
                     type="radio"
                     id="dinosaur"
                     name="player1monster"
-                    value="dinosaur"
+                    value="Brachio"
                   />
                   <label for="dinosaur">
                     <figure class="player1">
@@ -76,7 +78,7 @@
                     type="radio"
                     id="reaper"
                     name="player1monster"
-                    value="reaper"
+                    value="Grim"
                   />
                   <label for="reaper"
                     ><figure class="player1">
@@ -94,7 +96,7 @@
                     type="radio"
                     id="shark"
                     name="player1monster"
-                    value="shark"
+                    value="Sharky"
                   />
                   <label for="shark"
                     ><figure class="player1">
@@ -110,7 +112,7 @@
                     type="radio"
                     id="yeti"
                     name="player1monster"
-                    value="yeti"
+                    value="Yeti"
                   />
                   <label for="yeti"
                     ><figure class="player1">
@@ -130,7 +132,7 @@
                     type="radio"
                     id="small-dino"
                     name="player2monster"
-                    value="small-dino"
+                    value="Rex"
                   />
                   <label for="small-dino">
                     <figure class="player2">
@@ -146,7 +148,7 @@
                     type="radio"
                     id="hammerhead"
                     name="player2monster"
-                    value="hammerhead"
+                    value="Longhead"
                   />
                   <label for="hammerhead"
                     ><figure class="player2">
@@ -163,7 +165,7 @@
                     type="radio"
                     id="gator"
                     name="player2monster"
-                    value="gator"
+                    value="Alli"
                   />
                   <label for="gator"
                     ><figure class="player2">
@@ -179,7 +181,7 @@
                     type="radio"
                     id="goblin"
                     name="player2monster"
-                    value="goblin"
+                    value="Shrek"
                   />
                   <label for="goblin"
                     ><figure class="player2">

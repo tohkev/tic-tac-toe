@@ -40,19 +40,9 @@ const gameBoard = (() => {
 })();
 
 const game = (() => {
-  //monster selection and player generation
-
-  let submitBtn = document.querySelector(".submit-choices");
-  let monsterMenu = document.querySelector(".monster-choice-overlay");
-
-  submitBtn.addEventListener("click", (e) => {
-    const playerOne = playerFactory("Kevin", "x");
-    const playerTwo = playerFactory("Ann", "o");
-
-    monsterMenu.style.display = "none";
-    gameBoard.restartBtn.style.display = "block";
-    e.target.style.display = "none";
-  });
+  // player generation
+  const playerOne = playerFactory("Grim", "grim");
+  const playerTwo = playerFactory("Rex", "rex");
 
   //game logistics
   let activePlayer = playerOne;
